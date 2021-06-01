@@ -1,0 +1,50 @@
+{% extends 'inventory/main.html'%}
+
+{% block content %}
+
+<div class="row">
+    <div class="col col-mnd">
+        <div class="card">
+            <div class="card-body">
+                <h5>Storage entries</h5>
+                
+            </div>
+            <div class="card-body">
+                <table class="table table-sm">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Date entry</th>
+                            <th scope="col">Production</th>
+                            <th scope="col">Expiry</th>
+                            <th scope="col">Batch</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Supplier</th>
+                            <th scope="col">Edit</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        {% for i in pinputs %}
+                            <tr>
+                                <td>{{i.date_created}}</td>
+                                <td>{{i.date_production}}</td>
+                                <td>{{i.date_expiry}}</td>
+                                <td>{{i.batch}}</td>
+                                <td>{{i.product}}</td>
+                                <td>{{i.quantity}}</td>
+                                <td>{{i.supplier}}</td>
+                                <td><a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil-square"></i></a></td>
+                            </tr>
+					    {% endfor %}
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+{% endblock content %}

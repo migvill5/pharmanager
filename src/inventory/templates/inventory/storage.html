@@ -1,0 +1,48 @@
+{% extends 'inventory/main.html'%}
+
+{% block content %}
+
+<div class="row">
+    <div class="col col-mnd">
+        <div class="card">
+            <div class="card-body">
+                <h5>Storage List</h5>
+                
+            </div>
+            <div class="card-body">
+                <table class="table table-sm">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Barcode</th>
+                            <th scope="col">Reg.San</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col"> scope="col"Dosage</th>
+                            <th scope="col">Laboratory</th>
+                            <th scope="col">Edit</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        {% for i in products %}
+                            <tr>
+                                <td>{{i.name}}</td>
+                                <td>{{i.barcode}}</td>
+                                <td>{{i.regsan}}</td>
+                                <td>{{i.quantity}}</td>
+                                <td>{{i.dosage_form}}</td>
+                                <td>{{i.laboratory}}</td>
+                                <td><a href="#" class="btn btn-sm btn-dark"><i class="bi bi-pencil-square"></i></a></td>
+                            </tr>
+					    {% endfor %}
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+{% endblock content %}

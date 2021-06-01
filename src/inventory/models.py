@@ -61,7 +61,7 @@ class Product(models.Model):
         return self.name
 
 class ProductInput(models.Model):
-    data_created = models.DateField(auto_now=True)
+    date_created = models.DateField(auto_now=True)
     batch = models.CharField(max_length=30, null=False, default="")
     date_production = models.DateField(default=date.today)
     date_expiry = models.DateField(default=date.today)
